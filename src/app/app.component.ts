@@ -9,7 +9,7 @@ import { concatMap, map, take, tap } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nxjs-exemplos';
+  title = 'nxjs-examples';
 
   stream$: Observable<string>;
 

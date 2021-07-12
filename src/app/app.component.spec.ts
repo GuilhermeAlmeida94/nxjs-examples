@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'nxjs-exemplos'`, () => {
+  it(`should have as title 'nxjs-examples'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('nxjs-exemplos');
+    expect(app.title).toEqual('nxjs-examples');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('nxjs-exemplos app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('nxjs-examples app is running!');
   });
 });
