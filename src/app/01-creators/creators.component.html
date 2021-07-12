@@ -1,13 +1,7 @@
 <h4>{{ title }}</h4>
 
-<div *ngIf="pokemonOf$ | async as pokemon">
-  {{ pokemon.name }}
-</div>
+<div>{{ lastPokemon1.name }}</div>
 
-<div *ngIf="pokemonFrom$ | async as pokemon">
-  {{ pokemon.name }}
-</div>
+<div>{{ lastPokemon2.name }}</div>
 
-<div *ngIf="pokemonFromDelayed$ | async as pokemon">
-  {{ pokemon.name }}
-</div>
+<div *ngIf="lastPokemon3">{{ lastPokemon3.name }}</div>

@@ -4,12 +4,12 @@ import { concatMap, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-creators',
-  templateUrl: './creators.component.html',
-  styleUrls: ['./creators.component.css']
+  templateUrl: './creators.component.html'
 })
 export class CreatorsComponent {
-
-  constructor() { }
+  lastPokemon1: any;
+  lastPokemon2: any;
+  lastPokemon3: any;
 
   title = 'Creators';
 
@@ -20,12 +20,17 @@ export class CreatorsComponent {
     { id: 4, name: 'Pikachu'},
   ];
 
-  pokemonOf$ = of(...this.pokemonArray);
+  constructor() {
+    of(...this.pokemonArray)
+      .subscribe(pokemon => this.lastPokemon1 = pokemon);
 
-  pokemonFrom$ = from(this.pokemonArray);
+    from(this.pokemonArray)
+      .subscribe(pokemon => this.lastPokemon2 = pokemon);
 
-  pokemonFromDelayed$ = from(this.pokemonArray)
-    .pipe(
-      concatMap( item => of(item).pipe ( delay( 2000 ) ) )
-    );
+    from(this.pokemonArray)
+      .pipe(
+        concatMap( item => of(item).pipe ( delay( 2000 ) ) )
+      )
+      .subscribe(pokemon => this.lastPokemon3 = pokemon);
+  }
 }

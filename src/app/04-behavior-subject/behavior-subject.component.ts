@@ -4,16 +4,13 @@ import { BehaviorSubject } from 'rxjs';
 import { concatMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-pokemon-behavior-subject',
-  template: `
-  <div *ngIf="pokemon$ | async as pokemon">
-    {{ pokemon.name }}
-    <button (click)='next(pokemon.id)'>Next</button>
-  </div>`,
-  styleUrls: ['./pokemon-behavior-subject.component.css']
+  selector: 'app-behavior-subject',
+  templateUrl: './behavior-subject.component.html',
 })
-export class PokemonBehaviorSubjectComponent {
+export class BehaviorSubjectComponent {
   url = 'https://pokeapi.co/api/v2/pokemon/';
+
+  title = 'Behavior Subject';
 
   private pokemonIdBehaviorSubject = new BehaviorSubject<number>(1);
   pokemonIdAction$ = this.pokemonIdBehaviorSubject.asObservable();

@@ -1,0 +1,6 @@
+<h4>{{ title }}</h4>
+
+<div *ngIf="pokemon$ | async as pokemon">
+    {{ pokemon.name }}
+    <button (click)='next(pokemon.id)'>Next</button>
+</div>

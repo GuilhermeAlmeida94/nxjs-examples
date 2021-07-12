@@ -1,0 +1,8 @@
+<h4>{{ title }}</h4>
+
+<div *ngIf="lastPokemon">
+  {{ lastPokemon.name }}
+</div>
+
+<button (click)="subscribe()">Subscribe It!</button>
+<button (click)="unsubscribe()">Unsubscribe It!</button>
