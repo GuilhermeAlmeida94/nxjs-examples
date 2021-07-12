@@ -1,0 +1,13 @@
+<h4>{{ title }}</h4>
+
+<div *ngIf="pokemonOf$ | async as pokemon">
+  {{ pokemon.name }}
+</div>
+
+<div *ngIf="pokemonFrom$ | async as pokemon">
+  {{ pokemon.name }}
+</div>
+
+<div *ngIf="pokemonFromDelayed$ | async as pokemon">
+  {{ pokemon.name }}
+</div>
